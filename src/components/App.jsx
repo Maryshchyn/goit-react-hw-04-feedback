@@ -45,31 +45,24 @@ export  function App() {
     return positivePercentage || 0;
   };
   
-    
-  
-      
-         return (
-            <div>
-                 <Title title='Please leave feedback' />
-
-                 <FeedbackOptions options={keysOfState}
-                      onLeaveFeedback={onLeaveFeedback} />
-                <StatTitle title='Statistics' />
+    return (
+      <div>
+        <Title title='Please leave feedback' />
+        <FeedbackOptions options={keysOfState} onLeaveFeedback={onLeaveFeedback} />
+        <StatTitle title='Statistics' />
                 
-                 {countTotalFeedback() ? (
-            <Statistics
+        {countTotalFeedback() ? (
+          <Statistics
               good={good}
               neutral={neutral}
               bad={bad}
               total={countTotalFeedback()}
               positivePercentage={positivePercentage()}
-            />
-          ) : (
-            <Notification message="There is no feedback" />
-          )}
-                 
-                 
-             </div>
+        />
+        ) : (
+          <Notification message="There is no feedback" />
+        )}
+      </div>
         )
     
 
